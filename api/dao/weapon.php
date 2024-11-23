@@ -20,10 +20,8 @@ function findAllWeapons(string $type = "", int $limit = 10, int $offset = 0) {
         $sql .= " WHERE type LIKE :type";
         $params['type'] = "%$type%";
     }
-    $sql .= " LIMIT :limit OFFSET :offset";
+    $sql .= " LIMIT $limit OFFSET $offset ";
     $stmt = $db->prepare($sql);
-    $params['limit'] = $limit;
-    $params['offset'] = $offset;
     $res = $stmt->execute($params);
     if ($res) {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

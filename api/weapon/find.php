@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/dao/viking.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/dao/weapon.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/utils/server.php';
 
 header('Content-Type: application/json');
@@ -28,5 +28,5 @@ if (isset($_GET['offset'])) {
     }
 }
 
-$weapon = findAllWeapon($name, $limit, $offset);
+$weapon = findAllWeapons($name, $limit, $offset);
 echo json_encode($weapon);

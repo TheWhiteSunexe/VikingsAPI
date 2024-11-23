@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/dao/viking.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/dao/weapon.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/utils/server.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/viking/service.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/weapon/service.php';
 
 header('Content-Type: application/json');
 
@@ -12,7 +12,7 @@ if (!methodIsAllowed('create')) {
 
 $data = getBody();
 
-if (validateMandatoryParams($data, ['type', 'damage'])) {
+/*if (validateMandatoryParams($data, ['type', 'damage'])) {*/
     verifyWeapon($data);
 
     $newWeaponId = createWeapon($data['type'], $data['damage']);
@@ -21,6 +21,6 @@ if (validateMandatoryParams($data, ['type', 'damage'])) {
     }
     echo json_encode(['id' => $newWeaponId]);
     http_response_code(201);
-} else {
-    returnError(412, 'Mandatory parameters : ');
-}
+/*} else {
+    returnError(412, 'Mandatory parameters : type, damage');
+}*/
