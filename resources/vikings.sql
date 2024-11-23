@@ -35,6 +35,12 @@ CREATE TABLE `viking` (
   `health` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+CREATE TABLE Weapon (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(255) NOT NULL,
+    damage INT NOT NULL
+);
+
 --
 -- Déchargement des données de la table `viking`
 --

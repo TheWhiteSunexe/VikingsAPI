@@ -7,7 +7,7 @@ function getDatabaseConnection(): PDO {
         $db = 'vikings';
         $user = 'root';
         $pass = 'root';
-        $port = '8889';
+        $port = '3306';
         return new PDO("mysql:host=$host;dbname=$db;port=$port", $user, $pass);
     } catch (PDOException $e) {
         returnError(500, 'Could not connect to the database. ' . $e->getMessage());
