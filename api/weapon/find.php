@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/api/dao/viking.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/api/utils/server.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/dao/viking.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tpApi/VikingsAPI/api/utils/server.php';
 
 header('Content-Type: application/json');
 
