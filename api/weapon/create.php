@@ -12,7 +12,7 @@ if (!methodIsAllowed('create')) {
 
 $data = getBody();
 
-/*if (validateMandatoryParams($data, ['type', 'damage'])) {*/
+if (validateMandatoryParams($data, ['type', 'damage'])) {
     verifyWeapon($data);
 
     $newWeaponId = createWeapon($data['type'], $data['damage']);
@@ -21,6 +21,6 @@ $data = getBody();
     }
     echo json_encode(['id' => $newWeaponId]);
     http_response_code(201);
-/*} else {
-    returnError(412, 'Mandatory parameters : type, damage');
-}*/
+} else {
+    returnError(412, 'Mandatory parameters : type, damageaaa');
+}
