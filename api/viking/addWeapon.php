@@ -18,25 +18,21 @@ if (!isset($_GET['id'])) {
 
 $id = intval($_GET['id']);
 
-// Vérification de la présence de l'arme à ajouter
 if (isset($data['weaponId'])) {
     $weaponId = $data['weaponId'];
     
-    // Vérification que l'arme existe
     if (!weaponExists($weaponId)) {
         returnError(404, 'Weapon not found');
     }
 
-    // Vérification que le viking existe
     if (!vikingExists($id)) {
         returnError(404, 'Viking not found');
     }
 
-    // Mise à jour du viking avec la nouvelle arme
     $updated = addWeaponToViking($id, $weaponId);
     
     if ($updated) {
-        http_response_code(204); // Mise à jour réussie, pas de contenu à retourner
+        http_response_code(204);
     } else {
         returnError(500, 'Could not add weapon to the viking');
     }

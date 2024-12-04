@@ -22,5 +22,5 @@ if (validateMandatoryParams($data, ['type', 'damage'])) {
     echo json_encode(['id' => $newWeaponId]);
     http_response_code(201);
 } else {
-    returnError(412, 'Mandatory parameters : type, damageaaa');
+    returnError(412, 'Mandatory parameters : type, damage');
 }
